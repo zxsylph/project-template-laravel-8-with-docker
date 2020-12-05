@@ -24,10 +24,11 @@ RUN apt-get install -y \
 RUN docker-php-ext-configure \
 	gd --with-freetype --with-jpeg
 
-RUN pecl install mcrypt
+RUN pecl install mcrypt xdebug
 #enable php extensions
 RUN docker-php-ext-enable \
-	mcrypt
+	mcrypt \
+	xdebug
 
 #Install php package
 RUN docker-php-ext-install \

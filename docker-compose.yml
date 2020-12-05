@@ -24,7 +24,7 @@ services:
     volumes:
       - ./docker/db-files/mysql/data:/var/lib/mysql
     environment:
-      - MYSQL_DATABASE=laravel
+      - MYSQL_DATABASE=${DB_DATABASE}
       - MYSQL_USER=user
       - MYSQL_USER_HOST=%
       - MYSQL_PASSWORD=password 
