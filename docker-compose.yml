@@ -18,7 +18,7 @@ services:
   database:
     image: mysql:8.0.22
     volumes:
-      - ./db-files/mysql/data:/var/lib/mysql
+      - ./docker/db-files/mysql/data:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=laravel
       - MYSQL_USER=user
