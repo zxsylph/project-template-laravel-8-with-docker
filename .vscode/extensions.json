@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"aeschli.vscode-css-formatter",
+		"mikestead.dotenv",
+		"sachittandukar.laravel-5-snippets",
+		"onecentlin.laravel-blade",
+		"felixfbecker.php-intellisense",
+		"kokororin.vscode-phpfmt",
+		"numso.prettier-standard-vscode",
+	]
+}

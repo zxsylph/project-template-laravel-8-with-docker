@@ -1,0 +1,12 @@
+{
+	"editor.formatOnSave": true,
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.wordWrap":"on",
+	"blade.format.enable": true,
+	"git.enableSmartCommit": true,
+	// "beautify.language": {
+	// 	"html": ["blade", "html"]
+	// }
+	"editor.parameterHints.enabled": false
+}
