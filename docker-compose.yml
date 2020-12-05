@@ -1,0 +1,49 @@
+version: '2' # version ของ docker compose
+services:
+
+  php:
+    build: ./docker/php
+    working_dir: /var/www/laravel
+    volumes:
+      - ./:/var/www/laravel 
+
+  nginx:
+    build: ./docker/nginx
+    working_dir: /var/www/laravel
+    volumes_from:
+      - php
+    ports:
+      - 8000:80
+
+  database:
+    image: mysql:8.0.22
+    volumes:
+      - ./db-files/mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=laravel
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password 
+      - MYSQL_ROOT_PASSWORD=root 
+    ports:
+        - "3306:3306"
+
+  composer:
+    build: ./docker/php 
+    working_dir: /var/www/laravel
+    volumes_from:
+      - php
+    command: "composer install" 
+
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+        - 8890:80
+    environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOST=database
+    restart: always
+    depends_on:
+        - database
+        
+        
