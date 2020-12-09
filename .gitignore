@@ -14,3 +14,6 @@ yarn-error.log
 .DS_Store
 
 /docker/db-files/*
+/public/css
+/public/js
+/public/manifest.json
