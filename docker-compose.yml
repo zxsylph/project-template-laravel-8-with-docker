@@ -40,6 +40,8 @@ services:
     environment:
         - PMA_ARBITRARY=1
         - PMA_HOST=database
+        - PMA_USER=root
+        - PMA_PASSWORD=root
     restart: always
     depends_on:
         - database
