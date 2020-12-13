@@ -33,20 +33,6 @@ services:
     ports:
         - "3306:3306"
 
-  composer:
-    build: ./docker/php 
-    working_dir: /var/www/laravel
-    volumes_from:
-      - php
-    command: "composer install" 
-
-  node:
-    build: ./docker/php 
-    working_dir: /var/www/laravel
-    volumes_from:
-      - php
-    command: "npm install" 
-
   myadmin:
     image: phpmyadmin/phpmyadmin
     ports:
