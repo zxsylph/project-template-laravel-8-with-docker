@@ -39,13 +39,13 @@ services:
     volumes_from:
       - php
     command: "composer install" 
-  
-  nodejs:
-    image: node:12-alpine
+
+  node:
+    build: ./docker/php 
     working_dir: /var/www/laravel
     volumes_from:
       - php
-    command: "npm install"
+    command: "npm install" 
 
   myadmin:
     image: phpmyadmin/phpmyadmin

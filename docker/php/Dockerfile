@@ -44,3 +44,5 @@ RUN docker-php-ext-install \
 #Install composer php package manager
 RUN curl -sS https://getcomposer.org/installer | \
 	php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -y nodejs
