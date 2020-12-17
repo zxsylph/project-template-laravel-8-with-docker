@@ -7,7 +7,7 @@ function Test () {
 		setCount(count + 1)
 	}
 
-	React.useEffect(() => {
+	useEffect(() => {
 		console.log(count)
 	}, [count])
 
